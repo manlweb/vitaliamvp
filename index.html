@@ -21,7 +21,7 @@ body{
 }
 
 .container{
-    max-width:700px;
+    max-width:750px;
     margin:auto;
     background:white;
     padding:35px;
@@ -64,6 +64,26 @@ textarea{
     resize:vertical;
 }
 
+.checkbox-group{
+    margin-top:10px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:15px;
+    background:#fafafa;
+}
+
+.checkbox-group label{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:10px 0;
+    font-weight:normal;
+}
+
+.checkbox-group input[type="checkbox"]{
+    width:auto;
+}
+
 button{
     width:100%;
     margin-top:30px;
@@ -95,80 +115,154 @@ button:hover{
 
 <div class="container">
 
-    <h1>Encuesta para Asesores</h1>
+<h1>Encuesta para Asesores</h1>
 
-    <p class="descripcion">
-        Queremos entender los retos reales de los asesores
-        para desarrollar mejores herramientas de prospección,
-        seguimiento y organización.
-    </p>
+<p class="descripcion">
+Queremos entender los retos reales de los asesores
+para desarrollar mejores herramientas de prospección,
+seguimiento y organización.
+</p>
 
-    <form id="formulario">
+<form id="formulario">
 
-        <label>Nombre</label>
-        <input type="text" id="nombre" required>
+<label>Nombre</label>
+<input type="text" id="nombre" required>
 
-        <label>¿Cuánto tiempo llevas como asesor?</label>
-        <select id="tiempoComoAsesor" required>
-            <option value="">Selecciona una opción</option>
-            <option>Menos de 6 meses</option>
-            <option>6 meses a 1 año</option>
-            <option>1 a 3 años</option>
-            <option>Más de 3 años</option>
-        </select>
+<label>¿Cuánto tiempo llevas como asesor?</label>
 
-        <label>¿Cuál es tu mayor problema actualmente?</label>
-        <select id="mayorProblema" required>
-            <option value="">Selecciona una opción</option>
-            <option>Conseguir prospectos</option>
-            <option>Dar seguimiento</option>
-            <option>Organizar clientes</option>
-            <option>Hablar con prospectos</option>
-            <option>Cerrar ventas</option>
-            <option>Mantener constancia</option>
-        </select>
+<select id="tiempoComoAsesor" required>
+    <option value="">Selecciona una opción</option>
+    <option>Menos de 6 meses</option>
+    <option>6 meses a 1 año</option>
+    <option>1 a 3 años</option>
+    <option>Más de 3 años</option>
+</select>
 
-        <label>¿Qué pasó después de terminar tu Proyecto 200?</label>
-        <select id="quePasoProyecto200" required>
-            <option value="">Selecciona una opción</option>
-            <option>Me quedé sin prospectos</option>
-            <option>No supe qué hacer después</option>
-            <option>Perdí seguimiento</option>
-            <option>Conseguí más clientes</option>
-            <option>Dejé de prospectar</option>
-        </select>
+<label>¿Cuál es tu mayor problema actualmente?</label>
 
-        <label>¿Qué herramienta usas actualmente?</label>
-        <select id="herramientaActual" required>
-            <option value="">Selecciona una opción</option>
-            <option>Excel</option>
-            <option>WhatsApp</option>
-            <option>Libreta</option>
-            <option>CRM</option>
-            <option>Ninguna</option>
-        </select>
+<div class="checkbox-group">
 
-        <label>¿Qué herramienta te ayudaría más?</label>
-        <select id="herramientaDeseada" required>
-            <option value="">Selecciona una opción</option>
-            <option>Recordatorios automáticos</option>
-            <option>Ideas para conseguir prospectos</option>
-            <option>Seguimiento automático</option>
-            <option>Panel de clientes</option>
-            <option>Automatización de WhatsApp</option>
-            <option>Capacitación práctica</option>
-        </select>
+<label>
+<input type="checkbox" name="mayorProblema" value="Conseguir prospectos">
+Conseguir prospectos
+</label>
 
-        <label>Comentarios adicionales</label>
-        <textarea id="comentarios" rows="5"></textarea>
+<label>
+<input type="checkbox" name="mayorProblema" value="Dar seguimiento">
+Dar seguimiento
+</label>
 
-        <button type="submit">
-            Enviar Respuestas
-        </button>
+<label>
+<input type="checkbox" name="mayorProblema" value="Organizar clientes">
+Organizar clientes
+</label>
 
-    </form>
+<label>
+<input type="checkbox" name="mayorProblema" value="Hablar con prospectos">
+Hablar con prospectos
+</label>
 
-    <div id="mensaje"></div>
+<label>
+<input type="checkbox" name="mayorProblema" value="Cerrar ventas">
+Cerrar ventas
+</label>
+
+<label>
+<input type="checkbox" name="mayorProblema" value="Mantener constancia">
+Mantener constancia
+</label>
+
+</div>
+
+<label>¿Qué pasó después de terminar tu Proyecto 200?</label>
+
+<select id="quePasoProyecto200" required>
+    <option value="">Selecciona una opción</option>
+    <option>Me quedé sin prospectos</option>
+    <option>No supe qué hacer después</option>
+    <option>Perdí seguimiento</option>
+    <option>Conseguí más clientes</option>
+    <option>Dejé de prospectar</option>
+</select>
+
+<label>¿Qué herramientas usas actualmente?</label>
+
+<div class="checkbox-group">
+
+<label>
+<input type="checkbox" name="herramientaActual" value="Excel">
+Excel
+</label>
+
+<label>
+<input type="checkbox" name="herramientaActual" value="WhatsApp">
+WhatsApp
+</label>
+
+<label>
+<input type="checkbox" name="herramientaActual" value="Libreta">
+Libreta
+</label>
+
+<label>
+<input type="checkbox" name="herramientaActual" value="CRM">
+CRM
+</label>
+
+<label>
+<input type="checkbox" name="herramientaActual" value="Ninguna">
+Ninguna
+</label>
+
+</div>
+
+<label>¿Qué herramientas te ayudarían más?</label>
+
+<div class="checkbox-group">
+
+<label>
+<input type="checkbox" name="herramientaDeseada" value="Recordatorios automáticos">
+Recordatorios automáticos
+</label>
+
+<label>
+<input type="checkbox" name="herramientaDeseada" value="Ideas para conseguir prospectos">
+Ideas para conseguir prospectos
+</label>
+
+<label>
+<input type="checkbox" name="herramientaDeseada" value="Seguimiento automático">
+Seguimiento automático
+</label>
+
+<label>
+<input type="checkbox" name="herramientaDeseada" value="Panel de clientes">
+Panel de clientes
+</label>
+
+<label>
+<input type="checkbox" name="herramientaDeseada" value="Automatización de WhatsApp">
+Automatización de WhatsApp
+</label>
+
+<label>
+<input type="checkbox" name="herramientaDeseada" value="Capacitación práctica">
+Capacitación práctica
+</label>
+
+</div>
+
+<label>Comentarios adicionales</label>
+
+<textarea id="comentarios" rows="5"></textarea>
+
+<button type="submit">
+Enviar Respuestas
+</button>
+
+</form>
+
+<div id="mensaje"></div>
 
 </div>
 
@@ -182,17 +276,34 @@ document.getElementById("formulario")
     e.preventDefault();
 
     const boton = document.querySelector("button");
+
     boton.disabled = true;
     boton.innerText = "Enviando...";
 
     const data = {
+
         nombre: document.getElementById("nombre").value,
-        tiempoComoAsesor: document.getElementById("tiempoComoAsesor").value,
-        mayorProblema: document.getElementById("mayorProblema").value,
-        quePasoProyecto200: document.getElementById("quePasoProyecto200").value,
-        herramientaActual: document.getElementById("herramientaActual").value,
-        herramientaDeseada: document.getElementById("herramientaDeseada").value,
-        comentarios: document.getElementById("comentarios").value
+
+        tiempoComoAsesor:
+        document.getElementById("tiempoComoAsesor").value,
+
+        mayorProblema: Array.from(
+        document.querySelectorAll('input[name="mayorProblema"]:checked')
+        ).map(el => el.value).join(", "),
+
+        quePasoProyecto200:
+        document.getElementById("quePasoProyecto200").value,
+
+        herramientaActual: Array.from(
+        document.querySelectorAll('input[name="herramientaActual"]:checked')
+        ).map(el => el.value).join(", "),
+
+        herramientaDeseada: Array.from(
+        document.querySelectorAll('input[name="herramientaDeseada"]:checked')
+        ).map(el => el.value).join(", "),
+
+        comentarios:
+        document.getElementById("comentarios").value
     };
 
     try{
@@ -205,7 +316,7 @@ document.getElementById("formulario")
         const result = await response.json();
 
         document.getElementById("mensaje").innerHTML =
-            "✅ Respuestas enviadas correctamente";
+        "✅ Respuestas enviadas correctamente";
 
         document.getElementById("mensaje").style.color = "green";
 
@@ -216,7 +327,7 @@ document.getElementById("formulario")
         console.error(error);
 
         document.getElementById("mensaje").innerHTML =
-            "❌ Error al enviar respuestas";
+        "❌ Error al enviar respuestas";
 
         document.getElementById("mensaje").style.color = "red";
     }
