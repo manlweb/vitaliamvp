@@ -1,0 +1,89 @@
+<script>
+
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxpsLr5_qs2l1q3KH3xtcx1PzBWsRmJfTH1yXl1XuTBTmVLqNGV56xHbiqkdOhIQiuh/exec";
+
+document.getElementById("formulario")
+
+.addEventListener("submit", async function(e){
+
+    e.preventDefault();
+
+    const boton = document.querySelector("button");
+
+    boton.disabled = true;
+
+    boton.innerText = "Enviando...";
+
+    const data = {
+
+        nombre: document.getElementById("nombre").value,
+
+        tiempoComoAsesor:
+
+        document.getElementById("tiempoComoAsesor").value,
+
+        mayorProblema: Array.from(
+
+        document.querySelectorAll('input[name="mayorProblema"]:checked')
+
+        ).map(el => el.value).join(", "),
+
+        quePasoProyecto200:
+
+        document.getElementById("quePasoProyecto200").value,
+
+        herramientaActual: Array.from(
+
+        document.querySelectorAll('input[name="herramientaActual"]:checked')
+
+        ).map(el => el.value).join(", "),
+
+        herramientaDeseada: Array.from(
+
+        document.querySelectorAll('input[name="herramientaDeseada"]:checked')
+
+        ).map(el => el.value).join(", "),
+
+        comentarios:
+
+        document.getElementById("comentarios").value
+
+    };
+
+    try{
+
+        await fetch(SCRIPT_URL, {
+
+            method: "POST",
+
+            body: JSON.stringify(data)
+
+        });
+
+        document.getElementById("mensaje").innerHTML =
+
+        "✅ Respuestas enviadas correctamente";
+
+        document.getElementById("mensaje").style.color = "green";
+
+        document.getElementById("formulario").reset();
+
+    }catch(error){
+
+        console.error(error);
+
+        document.getElementById("mensaje").innerHTML =
+
+        "❌ Error al enviar respuestas";
+
+        document.getElementById("mensaje").style.color = "red";
+
+    }
+
+    boton.disabled = false;
+
+    boton.innerText = "Enviar Respuestas";
+
+});
+
+</script>
